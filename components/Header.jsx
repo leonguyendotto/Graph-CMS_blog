@@ -18,13 +18,13 @@ const Header = () => {
                 <div className='md:float-left block'>
                     <Link href="/">
                         <span className='cursor-pointer font-bold text-4xl text-white'>
-                            GraphCMS
+                            Welcome to my Blog
                         </span>
                     </Link>
                 </div>
                 <div className='hidden md:float-left md:contents'>
                     {categories.map((category) => (
-                        <Link key={category.slug} href={`/category/%{category.slug}`}>
+                        <Link key={category.slug} href={`/category/${category.slug}`}>
                             <span className='md:float-right mt-2 align-middle text-white ml-4 font-semibold cursor-pointer'>
                                 {category.name}
                             </span>
@@ -37,3 +37,6 @@ const Header = () => {
 }
 
 export default Header
+
+//Failed to decode param - debug: this error usually happens when the router receives the % instead of $
+//double check the type error before adding another solution
